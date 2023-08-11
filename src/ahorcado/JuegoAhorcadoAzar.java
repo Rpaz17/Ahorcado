@@ -23,6 +23,11 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
         super.palabraActual = "_".repeat(palabraSecretaAzar.length()); 
         Palabras.add("papel");
         Palabras.add("sapo");
+        Palabras.add("pelo");
+        Palabras.add("hilo");
+        Palabras.add("cocacola");
+        Palabras.add("estufa");
+        Palabras.add("consulta");
 //        jaf = new JuegoAhorcadoFijo(palabraSecretaAzar);
     }
 
