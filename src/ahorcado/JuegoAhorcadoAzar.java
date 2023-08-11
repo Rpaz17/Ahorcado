@@ -15,6 +15,7 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
 
     public JuegoAhorcadoAzar(String palabraSecretaAzar) {
         this.palabraSecretaAzar = palabraSecretaAzar;
+        Palabras = new ArrayList<>();
         super.intentos = 6;
         Palabras.add("papel");
         Palabras.add("sapo");
