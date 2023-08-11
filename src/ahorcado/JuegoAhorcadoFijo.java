@@ -22,23 +22,23 @@ public class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
     }
 
     @Override
-        public void verificarLetra(char letra){
-            if(palabraSecreta.contains(String.valueOf(letra))){
-                System.out.println("Acertó la letra");
-            }else{
-                System.out.println("No acertó la letra");
-                intentos -=1;
-            }
+    public void verificarLetra(char letra) {
+        if (palabraSecreta.contains(String.valueOf(letra))) {
+            System.out.println("Acertó la letra");
+        } else {
+            System.out.println("No acertó la letra");
+            intentos -= 1;
         }
-        
-        @Override
-        public void hasGanado(){
-            if (palabraActual.equals(palabraSecreta)){
-                System.out.println("HAS GANADO, ACERTASTE LA PALABRA COMPLETA!");
-            }else if ((intentos == 0) && (!palabraActual.equals(palabraSecreta))){
-                System.out.println("TE QUEDASTE SIN INTENTOS, PERDIISTE");
-            }
+    }
+
+    @Override
+    public void hasGanado() {
+        if (palabraActual.equals(palabraSecreta)) {
+            System.out.println("HAS GANADO, ACERTASTE LA PALABRA COMPLETA!");
+        } else if ((intentos == 0) && (!palabraActual.equals(palabraSecreta))) {
+            System.out.println("TE QUEDASTE SIN INTENTOS, PERDIISTE");
         }
+    }
 
     @Override
     public void inicializarPalabraSecreta() {
