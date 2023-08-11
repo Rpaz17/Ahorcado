@@ -49,7 +49,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="salirBoton" min="-2" pref="207" max="-2" attributes="0"/>
+                  <Component id="btnsalir" min="-2" pref="207" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -59,17 +59,17 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="loginButton" min="-2" pref="315" max="-2" attributes="0"/>
+                  <Component id="btnfija" min="-2" pref="315" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="95" max="32767" attributes="0"/>
-                  <Component id="crearPlayerBoton" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnazar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="crearPlayerBoton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="bntcambiarpalabras" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -80,20 +80,20 @@
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="loginButton" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="btnfija" min="-2" pref="68" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="crearPlayerBoton" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="btnazar" min="-2" pref="68" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="crearPlayerBoton1" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="bntcambiarpalabras" min="-2" pref="68" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="salirBoton" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="btnsalir" min="-2" pref="68" max="-2" attributes="0"/>
                   <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="loginButton">
+        <Component class="javax.swing.JButton" name="btnfija">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="66" type="rgb"/>
@@ -107,10 +107,10 @@
             <Property name="text" type="java.lang.String" value="Jugar con palabra fija"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnfijaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="crearPlayerBoton">
+        <Component class="javax.swing.JButton" name="btnazar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="66" type="rgb"/>
@@ -124,10 +124,10 @@
             <Property name="text" type="java.lang.String" value="Jugar con palabra al azar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crearPlayerBotonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnazarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="salirBoton">
+        <Component class="javax.swing.JButton" name="btnsalir">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="66" type="rgb"/>
@@ -140,11 +140,8 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirBotonActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="crearPlayerBoton1">
+        <Component class="javax.swing.JButton" name="bntcambiarpalabras">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="66" type="rgb"/>
@@ -157,9 +154,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cambiar Palabras"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crearPlayerBoton1ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>

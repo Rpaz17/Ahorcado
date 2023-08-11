@@ -3,6 +3,10 @@ package ahorcado;
 import java.util.ArrayList;
 
 public class Datos {
+    
+    public String modoJuego;
+    
+    public String palabraPorAdivinar;
 
     public boolean[] letraAdivinada;
 

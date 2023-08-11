@@ -2,22 +2,27 @@ package ahorcado;
 
 import ahorcado.JuegoAhorcadoBase;
 import ahorcado.Jugar;
-import ahorcado.Jugar;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class JuegoAhorcadoAzar extends JuegoAhorcadoBase{
+public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
+
     Random random = new Random();
     private ArrayList<String> Palabras;
     public String palabraSecretaAzar;
+    Datos datos;
+    JuegoAhorcadoFijo jaf;
 
-    public JuegoAhorcadoAzar() {
-        super.palabraActual = "_".repeat(palabraSecreta.length());
+    public JuegoAhorcadoAzar(String palabraSecretaAzar) {
+        this.palabraSecretaAzar = palabraSecretaAzar;
         super.intentos = 6;
+        Palabras.add("papel");
+        Palabras.add("sapo");
+        jaf = new JuegoAhorcadoFijo(palabraSecretaAzar); 
     }
-    
+
     @Override
-     public void actualizarPalabraActual(char letra) {
+    public void actualizarPalabraActual(char letra) {
         char[] nuevaPalabraActual = palabraActual.toCharArray();
         for (int i = 0; i < palabraSecreta.length(); i++) {
             if (palabraSecreta.charAt(i) == letra) {
@@ -28,22 +33,22 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase{
     }
 
     @Override
-    public void verificarLetra(char letra){
-            if(palabraSecreta.contains(String.valueOf(letra))){
-                System.out.println("Acertó la letra");
-            }else{
-                System.out.println("No acertó la letra");
-                intentos -=1;
-            }
+    public boolean verificarLetra(char letra) {
+        if (palabraSecreta.contains(String.valueOf(letra))) {
+            return true;
+        } else {
+            intentos -= 1;
+            return false;
         }
+    }
 
     @Override
     void hasGanado() {
-        if (palabraActual.equals(palabraSecreta)){
-                System.out.println("HAS GANADO, ACERTASTE LA PALABRA COMPLETA!");
-            }else if ((intentos == 0) && (!palabraActual.equals(palabraSecreta))){
-                System.out.println("TE QUEDASTE SIN INTENTOS, PERDIISTE");
-            }
+        if (palabraActual.equals(palabraSecreta)) {
+            System.out.println("HAS GANADO, ACERTASTE LA PALABRA COMPLETA!");
+        } else if ((intentos == 0) && (!palabraActual.equals(palabraSecreta))) {
+            System.out.println("TE QUEDASTE SIN INTENTOS, PERDIISTE");
+        }
 
     }
 
@@ -52,15 +57,13 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase{
 
         int randomNumber = random.nextInt(Palabras.size());
         this.palabraSecretaAzar = Palabras.get(randomNumber);
-        
+
     }
 
     @Override
     public void jugar() {
-        Jugar jugar = new Jugar();
+        Jugar jugar = new Jugar(this, jaf);
         jugar.setVisible(true);
     }
-    
-    
-    
+
 }

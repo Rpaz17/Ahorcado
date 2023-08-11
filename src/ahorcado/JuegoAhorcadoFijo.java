@@ -3,7 +3,9 @@ package ahorcado;
 public class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
 
     public String palabraSecretaFija;
-
+    Datos datos;
+    JuegoAhorcadoAzar jaa;
+    Jugar jugar = new Jugar(jaa, this);
     public JuegoAhorcadoFijo(String palabraSecretaFija) {
         this.palabraSecretaFija = palabraSecretaFija;
         super.palabraActual = "_".repeat(palabraSecretaFija.length());
@@ -22,12 +24,12 @@ public class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
     }
 
     @Override
-    public void verificarLetra(char letra) {
+    public boolean verificarLetra(char letra) {
         if (palabraSecreta.contains(String.valueOf(letra))) {
-            System.out.println("Acertó la letra");
+            return true;
         } else {
-            System.out.println("No acertó la letra");
             intentos -= 1;
+            return false;
         }
     }
 
@@ -50,7 +52,6 @@ public class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
 
     @Override
     public void jugar() {
-         Jugar jugar = new Jugar();
         jugar.setVisible(true);
     }
 }

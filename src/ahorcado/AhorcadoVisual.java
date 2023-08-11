@@ -10,11 +10,15 @@ package ahorcado;
  */
 public class AhorcadoVisual extends javax.swing.JFrame {
 
+    JuegoAhorcadoAzar jaa;
+    JuegoAhorcadoFijo jaf;
     /**
      * Creates new form AhorcadoVisual
      */
-    public AhorcadoVisual() {
+    public AhorcadoVisual(JuegoAhorcadoAzar jaa, JuegoAhorcadoFijo jaf) {
         initComponents();
+        this.jaa=jaa;
+        this.jaf=jaf;
     }
 
     /**
@@ -27,55 +31,45 @@ public class AhorcadoVisual extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        loginButton = new javax.swing.JButton();
-        crearPlayerBoton = new javax.swing.JButton();
-        salirBoton = new javax.swing.JButton();
-        crearPlayerBoton1 = new javax.swing.JButton();
+        btnfija = new javax.swing.JButton();
+        btnazar = new javax.swing.JButton();
+        btnsalir = new javax.swing.JButton();
+        bntcambiarpalabras = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        loginButton.setBackground(new java.awt.Color(102, 153, 255));
-        loginButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        loginButton.setForeground(new java.awt.Color(0, 0, 0));
-        loginButton.setText("Jugar con palabra fija");
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
+        btnfija.setBackground(new java.awt.Color(102, 153, 255));
+        btnfija.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnfija.setForeground(new java.awt.Color(0, 0, 0));
+        btnfija.setText("Jugar con palabra fija");
+        btnfija.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonActionPerformed(evt);
+                btnfijaActionPerformed(evt);
             }
         });
 
-        crearPlayerBoton.setBackground(new java.awt.Color(102, 153, 255));
-        crearPlayerBoton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        crearPlayerBoton.setForeground(new java.awt.Color(0, 0, 0));
-        crearPlayerBoton.setText("Jugar con palabra al azar");
-        crearPlayerBoton.addActionListener(new java.awt.event.ActionListener() {
+        btnazar.setBackground(new java.awt.Color(102, 153, 255));
+        btnazar.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnazar.setForeground(new java.awt.Color(0, 0, 0));
+        btnazar.setText("Jugar con palabra al azar");
+        btnazar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearPlayerBotonActionPerformed(evt);
+                btnazarActionPerformed(evt);
             }
         });
 
-        salirBoton.setBackground(new java.awt.Color(102, 153, 255));
-        salirBoton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        salirBoton.setForeground(new java.awt.Color(0, 0, 0));
-        salirBoton.setText("Salir");
-        salirBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salirBotonActionPerformed(evt);
-            }
-        });
+        btnsalir.setBackground(new java.awt.Color(102, 153, 255));
+        btnsalir.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        btnsalir.setForeground(new java.awt.Color(0, 0, 0));
+        btnsalir.setText("Salir");
 
-        crearPlayerBoton1.setBackground(new java.awt.Color(102, 153, 255));
-        crearPlayerBoton1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        crearPlayerBoton1.setForeground(new java.awt.Color(0, 0, 0));
-        crearPlayerBoton1.setText("Cambiar Palabras");
-        crearPlayerBoton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearPlayerBoton1ActionPerformed(evt);
-            }
-        });
+        bntcambiarpalabras.setBackground(new java.awt.Color(102, 153, 255));
+        bntcambiarpalabras.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        bntcambiarpalabras.setForeground(new java.awt.Color(0, 0, 0));
+        bntcambiarpalabras.setText("Cambiar Palabras");
 
         jLabel1.setBackground(new java.awt.Color(102, 0, 204));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -88,7 +82,7 @@ public class AhorcadoVisual extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -96,15 +90,15 @@ public class AhorcadoVisual extends javax.swing.JFrame {
                 .addGap(147, 147, 147))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnfija, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(104, 104, 104))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(95, Short.MAX_VALUE)
-                .addComponent(crearPlayerBoton)
+                .addComponent(btnazar)
                 .addGap(91, 91, 91))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(crearPlayerBoton1)
+                .addComponent(bntcambiarpalabras)
                 .addGap(136, 136, 136))
         );
         jPanel1Layout.setVerticalGroup(
@@ -113,13 +107,13 @@ public class AhorcadoVisual extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnfija, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(crearPlayerBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnazar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(crearPlayerBoton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bntcambiarpalabras, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(salirBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -140,62 +134,31 @@ public class AhorcadoVisual extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-    }//GEN-LAST:event_loginButtonActionPerformed
+    private void btnfijaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfijaActionPerformed
+        Jugar jugar = new Jugar(jaa, jaf);
+        jugar.modo=true;
+         jugar.setVisible(true);
+         this.dispose();
 
-    private void crearPlayerBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearPlayerBotonActionPerformed
-    }//GEN-LAST:event_crearPlayerBotonActionPerformed
+    }//GEN-LAST:event_btnfijaActionPerformed
 
-    private void salirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBotonActionPerformed
-
-
-    }//GEN-LAST:event_salirBotonActionPerformed
-
-    private void crearPlayerBoton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearPlayerBoton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_crearPlayerBoton1ActionPerformed
+    private void btnazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnazarActionPerformed
+      Jugar jugar = new Jugar(jaa, jaf);
+        jugar.modo=false;
+         jugar.setVisible(true);
+         this.dispose();   
+    }//GEN-LAST:event_btnazarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AhorcadoVisual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AhorcadoVisual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AhorcadoVisual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AhorcadoVisual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AhorcadoVisual().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton crearPlayerBoton;
-    private javax.swing.JButton crearPlayerBoton1;
+    private javax.swing.JButton bntcambiarpalabras;
+    private javax.swing.JButton btnazar;
+    private javax.swing.JButton btnfija;
+    private javax.swing.JButton btnsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton loginButton;
-    private javax.swing.JButton salirBoton;
     // End of variables declaration//GEN-END:variables
 }
