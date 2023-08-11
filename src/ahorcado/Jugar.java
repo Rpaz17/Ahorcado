@@ -18,10 +18,9 @@ public class Jugar extends javax.swing.JFrame {
         this.jaa = jaa;
         this.jaf = jaf;
         this.letraIngresada = txtletraingresada.getText();
-        
 
         if (modo == false) {
-        jaa = new  JuegoAhorcadoAzar("hilo");
+            jaa = new JuegoAhorcadoAzar("hilo");
             jaa.inicializarPalabraSecreta();
             jaa.intentos = 6;
             this.intentos = jaa.intentos;
@@ -33,6 +32,7 @@ public class Jugar extends javax.swing.JFrame {
             palabraPorEncontrar = jaf.palabraSecretaFija;
         }
         lblnumintentos.setText(String.valueOf(intentos));
+        lblpalabraoculta.setText(palabraPorEncontrar);
     }
 
     @SuppressWarnings("unchecked")
@@ -167,16 +167,15 @@ public class Jugar extends javax.swing.JFrame {
 
     private void btnprobarletraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprobarletraActionPerformed
 
-        if (txtletraingresada.getText().length() > 1 && txtletraingresada.getText().length() < 1) {
-            JOptionPane.showMessageDialog(null, "Ingrese unicamente una letra.");
+        if (txtletraingresada.getText().length() != 1) {
+            JOptionPane.showMessageDialog(null, "Ingrese únicamente una letra.");
         } else {
             letraingresada = txtletraingresada.getText();
-
-            if (jaa.intentos > 0 && jaa.verificarLetra(letraingresada.charAt(0)) == true) {
+            if (jaa.intentos > 0 && jaa.verificarLetra(letraingresada.charAt(0))) {
                 jaa.actualizarPalabraActual(letraingresada.charAt(0));
-
             }
         }
+
 
     }//GEN-LAST:event_btnprobarletraActionPerformed
     public String letraIngresada;

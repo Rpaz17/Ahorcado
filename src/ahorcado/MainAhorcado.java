@@ -9,8 +9,11 @@ public class MainAhorcado {
     public static void main(String[] args) {
         String palabra = "placeholder";
         JuegoAhorcadoFijo jaf = new JuegoAhorcadoFijo(palabra);
+        jaf.inicializarPalabraSecreta();
         JuegoAhorcadoAzar jaa = new JuegoAhorcadoAzar(palabra);
+        jaa.inicializarPalabraSecreta();
         AhorcadoVisual av = new AhorcadoVisual(jaa, jaf);
+        
         av.setVisible(true);
     }
 }

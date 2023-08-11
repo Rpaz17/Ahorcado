@@ -7,9 +7,11 @@ public class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
     JuegoAhorcadoAzar jaa;
     Jugar jugar = new Jugar(jaa, this);
     public JuegoAhorcadoFijo(String palabraSecretaFija) {
+        System.out.println("si entra al fijo");
         this.palabraSecretaFija = palabraSecretaFija;
         super.palabraActual = "_".repeat(palabraSecretaFija.length());
         super.intentos = 6;
+        
     }
 
     @Override
