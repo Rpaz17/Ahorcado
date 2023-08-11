@@ -16,7 +16,7 @@ public class AdminPalabrasSecretas {
         palabrasSecretas.add(nuevaPalabra);
     }
     
-    public void seleccionarPalabras(){
-        
+    public void seleccionarPalabraAlAzar(){
+        palabrasSecretas.get(random.nextInt(palabrasSecretas.size()));
     }
 }
