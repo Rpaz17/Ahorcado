@@ -14,11 +14,13 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
     JuegoAhorcadoFijo jaf;
 
     public JuegoAhorcadoAzar(String palabraSecretaAzar) {
+        
         System.out.println("si entra al azar");
         this.palabraSecretaAzar = palabraSecretaAzar;
         Palabras = new ArrayList<>();
         super.intentos = 6;
         super.palabraSecreta="hola";
+        super.palabraActual = "_".repeat(palabraSecretaAzar.length()); 
         Palabras.add("papel");
         Palabras.add("sapo");
 //        jaf = new JuegoAhorcadoFijo(palabraSecretaAzar);
